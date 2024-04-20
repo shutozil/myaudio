@@ -1,12 +1,6 @@
 from __future__ import annotations
 import os
 
-# import shutil
-
-# from datetime import datetime, timezone, timedelta
-
-# JST = timezone(timedelta(hours=9))
-
 
 def check_file_exists(file_path: str) -> bool:
     # 指定されたパスのファイルが存在するかどうかをチェック

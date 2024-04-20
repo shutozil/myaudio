@@ -14,15 +14,10 @@ def main():
         description="argparseを使用したサンプルスクリプトです。"
     )
     parser.add_argument("--filename", type=str, help="ファイル名を入力してください.")
-    parser.add_argument(
-        "--rm", type=str, help="ファイル名をもとに作成したデータを削除します."
-    )
 
     # 引数の解析
     args = parser.parse_args()
     filename = args.filename
-
-    # TODO: 動画が生成されていたら処理を終える
 
     txt_data: str | None = util.read_txt_file(filename=filename)
     if txt_data is None:
