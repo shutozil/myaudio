@@ -1,0 +1,14 @@
+version: "3"
+services:
+  server:
+    build:
+      context: .
+    tty: true
+    stdin_open: true
+    container_name: myaudio
+    env_file: .env
+    volumes:
+      - .:/project
+
+volumes:
+  app:

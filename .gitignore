@@ -1,0 +1,10 @@
+__pycache__
+.DS_Store
+.env
+
+credentials/*
+!credentials/.keep
+data/*
+!data/.keep
+results/*
+!results/.keep
