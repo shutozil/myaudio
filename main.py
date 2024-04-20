@@ -14,10 +14,14 @@ def main():
         description="argparseを使用したサンプルスクリプトです。"
     )
     parser.add_argument("--filename", type=str, help="ファイル名を入力してください.")
+    parser.add_argument(
+        "--f", type=str, help="Yが入力された場合、強制的に音声ファイルを生成します."
+    )
 
     # 引数の解析
     args = parser.parse_args()
     filename = args.filename
+    force = args.f
 
     txt_data: str | None = util.read_txt_file(filename=filename)
     if txt_data is None:
@@ -30,7 +34,7 @@ def main():
 
     mp3_filename = f"{result_dir}/audio.mp3"
     # 出力ファイルに書き込み
-    if util.check_file_exists(mp3_filename):
+    if util.check_file_exists(mp3_filename) and force != "Y":
         # NOTE: オーディオが作成済みなら音声ファイルを作成しない
         print(f"オーディオコンテンツ: {mp3_filename}は存在します。")
     else:
